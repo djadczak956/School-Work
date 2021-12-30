@@ -29,6 +29,7 @@ public class NumberGuess {
     }
 
 
+    // Prints the intro text
     public static void printIntro() {
         System.out.println("Try to guess a number from 0 to 99. \nYou will be told how many digits match.");
     }
@@ -45,7 +46,7 @@ public class NumberGuess {
         return console.nextInt();
     }
 
-
+    // Gets a guess and ensures it is in the proper range
     public static int getGuess(Scanner console) {
         int guess = getInt(console, "Your guess? ---> ");
         while (guess < 0 || guess >= 100) {
@@ -56,7 +57,7 @@ public class NumberGuess {
         return guess;
     }
 
-    // This method checks how many digits match and reports it
+    // Checks how many digits match and reports it
     public static int matches(int number, int guess) {
         int numMatches = 0;
 
@@ -73,4 +74,6 @@ public class NumberGuess {
         
         return numMatches;
     }
+
+    
 }
