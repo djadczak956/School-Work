@@ -37,11 +37,11 @@ public class NumberGuess {
 
     // Prompts until a valid integer is entered
     public static int getInt(Scanner console, String prompt) {
-        System.out.println(prompt);
+        System.out.print(prompt);
         while (!console.hasNextInt()) {
             console.next(); // Discard input
             System.out.println("Not an integer; try again.");
-            System.out.println(prompt);
+            System.out.print(prompt);
         }
         return console.nextInt();
     }
@@ -75,5 +75,5 @@ public class NumberGuess {
         return numMatches;
     }
 
-    
+
 }
