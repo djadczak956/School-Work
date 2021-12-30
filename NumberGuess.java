@@ -3,8 +3,9 @@ import java.util.*;
 
 public class NumberGuess {
     public static void main(String[] args) {
+        printIntro();
+        
         Scanner console = new Scanner(System.in);
-        System.out.println("Try to get the two-digit number (1-99)");
 
         Random rand = new Random();
         int number = rand.nextInt(100);    // Picks a random number from 1-99 inclusives
@@ -26,6 +27,12 @@ public class NumberGuess {
         System.out.println("You got it right in " + numGuesses + " tries. ");
         console.close();
     }
+
+
+    public static void printIntro() {
+        System.out.println("Try to guess a number from 0 to 99. You will be \ntold how many digits match.");
+    }
+
 
     // This method checks how many digits match and reports it
     public static int matches(int number, int guess) {
