@@ -7,8 +7,9 @@ public class NumberGuess {
         
         Scanner console = new Scanner(System.in);
 
+        // Picks a random number from 1-99 inclusive
         Random rand = new Random();
-        int number = rand.nextInt(100);    // Picks a random number from 1-99 inclusives
+        int number = rand.nextInt(100);    
 
         // First guess
         System.out.print("Your guess? ---> ");
@@ -31,6 +32,18 @@ public class NumberGuess {
 
     public static void printIntro() {
         System.out.println("Try to guess a number from 0 to 99. You will be \ntold how many digits match.");
+    }
+    
+
+    // Prompts until a valid integer is entered
+    public static int getInt(Scanner console, String prompt) {
+        System.out.println(prompt);
+        while (!console.hasNextInt()) {
+            console.next(); // Discard input
+            System.out.println("Not an integer; try again.");
+            System.out.println(prompt);
+        }
+        return console.nextInt();
     }
 
 
