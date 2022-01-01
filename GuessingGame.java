@@ -21,15 +21,13 @@ public class GuessingGame {
 
                 // Tells you if guess is too low or high
                 if (guess < num) {
-                    System.out.print(guess + " is too low so give it another shot --> ");
+                    System.out.println(guess + " is too low so give it another shot.");
                     count++;
                 } else if (guess > num) {
-                    System.out.println();
-                    System.out.print(guess + " is too high so give it another shot --> ");
+                    System.out.println(guess + " is too high so give it another shot.");
                     count++;
                 } else if (guess == num) {
-                    System.out.println();
-                    System.out.print(guess + " is correct. You win!");
+                    System.out.println(guess + " is correct. You win!");
                     count++;
                 } 
             }
