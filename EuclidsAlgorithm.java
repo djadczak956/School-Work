@@ -1,6 +1,8 @@
+import java.lang.Math;
+
 public class EuclidsAlgorithm {
     public static void main(String[] args) {
-        System.out.println(gcd(0, 120));
+        System.out.println(gcd(16, 64));
     }
 
     public static int gcd(int a, int b) {
@@ -8,12 +10,14 @@ public class EuclidsAlgorithm {
         int greater = Math.max(a, b);
         int divisor = 0;
 
-        if (greater == 0) {
-            return lower;
-        } else if (lower == 0) {
-            return greater;
-        } else if (lower == 0 && greater == 0) {
+        if (lower == 0 && greater == 0) {
             return 0;
+        } else if (lower == 0 || greater == 0) {
+            return Math.max(lower, greater);
+        }
+
+        if (greater % lower == 0) {
+            return lower;
         }
 
         while (greater % lower != 0) {
