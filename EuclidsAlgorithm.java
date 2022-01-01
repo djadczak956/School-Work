@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 public class EuclidsAlgorithm {
     public static void main(String[] args) {
         System.out.println(gcd(0, 120));
