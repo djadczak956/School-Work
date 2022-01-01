@@ -1,6 +1,6 @@
 public class FactorsOfTwo {
     public static void main(String[] args) {
-        showTwos(24);
+        showTwos(26);
     }
 
     public static void showTwos(int num) {
