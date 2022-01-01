@@ -2,7 +2,7 @@ import java.lang.Math;
 
 public class EuclidsAlgorithm {
     public static void main(String[] args) {
-        System.out.println(gcd(16, 64));
+        System.out.println(gcd(-512, -12));
     }
 
     public static int gcd(int a, int b) {
@@ -20,12 +20,18 @@ public class EuclidsAlgorithm {
             return lower;
         }
 
+
         while (greater % lower != 0) {
             divisor = greater % lower;
             
             greater = lower;
             lower = divisor;
         }
+
+        if (greater < 0 && lower < 0) {
+            return -1 * divisor;
+        }
+
         return divisor;
     }
 }
