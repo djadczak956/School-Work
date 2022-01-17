@@ -11,7 +11,6 @@ The reasoning for this is because of earthquakes. This shape is able to resist s
 important because you obviously don’t want something like a nuclear plant being susceptible to earthquakes. They designed 
 houses that were built out of materials that were cheap yet strong and flexible. When you combine the material with the 
 shape, the houses are now pretty resistant to earthquakes. 
-    
     This relates to physics because of the discussion of forces. Forces are mentioned when talking about the materials 
 that are used for buildings, specifically concrete. We know that f = ma, so if you increase the mass, then the 
 total force increases. Concrete has more mass than bamboo so it is incredibly dangerous if a concrete building collapses. 
