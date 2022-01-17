@@ -14,7 +14,7 @@ public class CountWords {
         lineInput.close();
 
         Scanner charInput = new Scanner(f);
-        charCount(charInput);
+        System.out.println("Characters: " + charCount(charInput));
         charInput.close();
     }
 
@@ -64,6 +64,12 @@ public class CountWords {
 
     // Returns the character count
     public static int charCount(Scanner input) throws FileNotFoundException {
-        return 1;
+        int count = 0;
+
+        while (input.hasNext()) {
+            count += input.next().length();
+        }
+        
+        return count;
     }
 }
