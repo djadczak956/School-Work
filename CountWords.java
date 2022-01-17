@@ -6,8 +6,8 @@ public class CountWords {
         File f = getFile();
         Scanner input = new Scanner(f);
         
-        wordCount(input);
-        System.out.println(lineCount(input));
+        System.out.println("Words: " + wordCount(input));
+        System.out.println("Lines: " + lineCount(input));
         charCount(input);
     }
 
@@ -31,13 +31,21 @@ public class CountWords {
 
     // Returns the word count 
     public static int wordCount(Scanner input) throws FileNotFoundException {
-        return 1;
+        int count = 0;
+        
+        while (input.hasNext()) {
+            input.next();
+            count++;
+        }
+
+        return count;
     }
 
 
     // Returns the line count
     public static int lineCount(Scanner input) throws FileNotFoundException {
         int count = 0;
+
         while (input.hasNextLine()) {
             input.nextLine();   // Move the cursor forward
             count++;
