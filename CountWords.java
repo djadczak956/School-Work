@@ -4,11 +4,18 @@ import java.io.*;
 public class CountWords {
     public static void main(String[] args) throws FileNotFoundException {
         File f = getFile();
-        Scanner input = new Scanner(f);
-        
-        System.out.println("Words: " + wordCount(input));
-        System.out.println("Lines: " + lineCount(input));
-        charCount(input);
+
+        Scanner wordInput = new Scanner(f);
+        System.out.println("Words: " + wordCount(wordInput));
+        wordInput.close();
+
+        Scanner lineInput = new Scanner(f);
+        System.out.println("Lines: " + lineCount(lineInput));
+        lineInput.close();
+
+        Scanner charInput = new Scanner(f);
+        charCount(charInput);
+        charInput.close();
     }
 
 
@@ -50,6 +57,7 @@ public class CountWords {
             input.nextLine();   // Move the cursor forward
             count++;
         }
+
         return count;
     }
 
