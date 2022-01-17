@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
 public class CountWords {
-    public static void main(String[] args) {
-        getFile();
+    public static void main(String[] args) throws FileNotFoundException {
+        System.out.println(getFile().canRead());
     }
 
 
@@ -18,7 +18,6 @@ public class CountWords {
             f = new File(console.nextLine());
         }
 
-        console.close();
         return f;
     }
 
