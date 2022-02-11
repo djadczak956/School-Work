@@ -9,11 +9,9 @@ public class Mastermind {
         intro();
         generateRandom(r, digits);
 
-        int[] guess = readInput(console);
+        String[] guess = readInput(console);
 
-        for (int n : digits) {
-            System.out.println(n);
-        }
+        System.out.println(Arrays.toString(guess));
     }
 
     // Uses random to generate digits 1-9 in the array
@@ -24,12 +22,12 @@ public class Mastermind {
     }
 
     // Reads input and returns as an array
-    public static int[] readInput(Scanner console) {
+    public static String[] readInput(Scanner console) {
         System.out.print("Enter in a four digit number: ");
         String digits = console.next();
-        int[] digitsArray = new int[digits.length()];
-        for (int i = 0; i < digits.length(); i++) {
-            digitsArray[i] = digits.charAt(i);
+        String[] digitsArray = new String[4];
+        for (int i = 0; i < 4; i++) {
+            digitsArray[i] = digits.substring(i, i + 1);
         }
 
         return digitsArray;
