@@ -8,9 +8,7 @@ public class Mastermind {
         int[] digits = new int[4];
         intro();
         generateRandom(r, digits);
-
-        String[] guess = readInput(console);
-
+        char[] guess = readInput(console);
         System.out.println(Arrays.toString(guess));
     }
 
@@ -22,24 +20,32 @@ public class Mastermind {
     }
 
     // Reads input and returns as an array
-    public static String[] readInput(Scanner console) {
+    public static char[] readInput(Scanner console) {
+        int input = 0;
         System.out.print("Enter in a four digit number: ");
-        int input = console.nextInt();
-        String digits = Integer.toString(input);
-        
-        String[] digitsArray = new String[4];
+        while (!console.hasNextInt()) {
+            console.next();
+            System.out.println("Please enter an integer.");
+            System.out.print("Enter in a four digit number: ");
+        }
+        input = console.nextInt();
+
+        char[] temp = String.valueOf(input).toCharArray();
+        char[] digitsArray = new char[4];
         for (int i = 0; i < 4; i++) {
-            digitsArray[i] = digits.substring(i, i + 1);
+            digitsArray[i] = temp[i];
         }
 
         return digitsArray;
     }
 
+    // Prints out the intro of the game
     public static void intro() {
         System.out.println("This is mastermind! This is a game where a");
         System.out.println("random 4-digit number is generated and you have");
         System.out.println("to try to guess it. There will be hints. Give it");
-        System.out.println("a shot?");
+        System.out.println("a shot? (Note: if you enter in a number larger than");
+        System.out.println("4-digits, only the first 4-digits will be accepted) ");
     }
 }
 
