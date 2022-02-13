@@ -10,7 +10,7 @@ public class Mastermind {
         char[] guessDigits = readInput(console);
         System.out.println("Guess: " + Arrays.toString(guessDigits));
         System.out.println("Random: " + Arrays.toString(randomDigits));
-        checkGuess(randomDigits, guessDigits);
+        System.out.println(checkGuess(console, randomDigits, guessDigits));
     }
 
     // Uses random to generate digits 1-9 in the array
@@ -34,7 +34,7 @@ public class Mastermind {
         while (!console.hasNextInt()) {
             console.next();
             System.out.println("Please enter an integer.");
-            System.out.print("Enter in a four digit number: ");
+            System.out.print("Enter in a four digit number (1-9): ");
         }
         input = console.nextInt();
 
@@ -47,14 +47,30 @@ public class Mastermind {
         return digitsArray;
     }
 
-    public static String checkGuess(char[] randomDigits, char[] guessDigits) {
-        int count = 0;
-        //for (int i = 0; )
-
-        return "h";
+    // Will compare the guess digits to the randomly generated digits
+    public static String checkGuess(Scanner console, char[] randomDigits, char[] guessDigits) {
+        int posCount;  // Count for right digits in wrong place
+        int correctCount; // Count for right digits in right place
+        while (!Arrays.equals(randomDigits, guessDigits)) {
+            posCount = 0;
+            correctCount = 0;
+            for (int i = 0; i < 4; i++) {
+                if (guessDigits[i] == randomDigits[i]) {
+                    correctCount++;
+                } 
+                for (int j = 0; j < 4; j++) {
+                    if (guessDigits[i] == randomDigits[j]) {
+                        posCount++;
+                    }
+                }
+            }
+            System.out.println("positionCount: " + posCount + ", correctCount: " + correctCount);
+            guessDigits = readInput(console);
+        }   
+        return "Nice!";
     }
 
-    // Prints out the intro of the game
+    // Prints out the intro of the game 
     public static void intro() {
         System.out.println("This is mastermind! This is a game where a");
         System.out.println("random 4-digit number is generated and you have");
