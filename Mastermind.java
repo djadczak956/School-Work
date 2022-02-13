@@ -24,7 +24,9 @@ public class Mastermind {
     // Reads input and returns as an array
     public static String[] readInput(Scanner console) {
         System.out.print("Enter in a four digit number: ");
-        String digits = console.next();
+        int input = console.nextInt();
+        String digits = Integer.toString(input);
+        
         String[] digitsArray = new String[4];
         for (int i = 0; i < 4; i++) {
             digitsArray[i] = digits.substring(i, i + 1);
