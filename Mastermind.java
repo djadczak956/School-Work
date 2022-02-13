@@ -6,25 +6,25 @@ public class Mastermind {
         Random r = new Random();
         Scanner console = new Scanner(System.in);
         intro();
-        char[] randomDigits = generateRandom(r);
-        char[] guessDigits = readInput(console);
-        System.out.println("Guess: " + Arrays.toString(guessDigits));
+        char[] randomDigits = generateRandom(r);    // Randomly generated digits
+        char[] guessDigits = readInput(console);    // Digits that user guesses
         System.out.println("Random: " + Arrays.toString(randomDigits));
-        System.out.println(checkGuess(console, randomDigits, guessDigits));
+        checkGuess(console, randomDigits, guessDigits);
     }
 
     // Uses random to generate digits 1-9 in the array
+    // Returns a char array
     public static char[] generateRandom(Random r) {
-        int[] array = new int[4];
+        int[] array = new int[4];   
         char[] randomDigits = new char[4];
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) {   // Generates random ints with Random
             array[i] = r.nextInt(10);   
         }
 
         for (int i = 0; i < 4; i++) {
-            randomDigits[i] = (char) (array[i] + '0');
-        }
-        return randomDigits;
+            randomDigits[i] = (char) (array[i] + '0');  // Converts int to char,
+        }                                               // '0' offsets so that numbers are selected instead of
+        return randomDigits;                            // starting with emojis and other characters
     }
 
     // Reads input and returns as an array
@@ -38,7 +38,7 @@ public class Mastermind {
         }
         input = console.nextInt();
 
-        char[] temp = String.valueOf(input).toCharArray();
+        char[] temp = String.valueOf(input).toCharArray();  // Turns the input into an array of chars
         char[] digitsArray = new char[4];
         for (int i = 0; i < 4; i++) {
             digitsArray[i] = temp[i];
@@ -48,26 +48,26 @@ public class Mastermind {
     }
 
     // Will compare the guess digits to the randomly generated digits
-    public static String checkGuess(Scanner console, char[] randomDigits, char[] guessDigits) {
+    public static void checkGuess(Scanner console, char[] randomDigits, char[] guessDigits) {
         int posCount;  // Count for right digits in wrong place
         int correctCount; // Count for right digits in right place
         while (!Arrays.equals(randomDigits, guessDigits)) {
-            posCount = 0;
-            correctCount = 0;
-            for (int i = 0; i < 4; i++) {
+            posCount = 0;   // Reset counter
+            correctCount = 0;   // Reset counter
+            for (int i = 0; i < 4; i++) {   // Checks if digits are in same place
                 if (guessDigits[i] == randomDigits[i]) {
                     correctCount++;
                 } 
-                for (int j = 0; j < 4; j++) {
+                for (int j = 0; j < 4; j++) {   // Check if a digit is in another index
                     if (guessDigits[i] == randomDigits[j]) {
                         posCount++;
                     }
                 }
             }
-            System.out.println("positionCount: " + posCount + ", correctCount: " + correctCount);
+            System.out.println("Right number but wrong position count: " + posCount + "\nCorrect number and position count: " + correctCount);
             guessDigits = readInput(console);
         }   
-        return "Nice!";
+        System.out.println("Nice job! You did it");
     }
 
     // Prints out the intro of the game 
