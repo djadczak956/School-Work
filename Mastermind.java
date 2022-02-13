@@ -5,18 +5,26 @@ public class Mastermind {
     public static void main(String[] args) {
         Random r = new Random();
         Scanner console = new Scanner(System.in);
-        int[] digits = new int[4];
         intro();
-        generateRandom(r, digits);
-        char[] guess = readInput(console);
-        System.out.println(Arrays.toString(guess));
+        char[] randomDigits = generateRandom(r);
+        char[] guessDigits = readInput(console);
+        System.out.println("Guess: " + Arrays.toString(guessDigits));
+        System.out.println("Random: " + Arrays.toString(randomDigits));
+        checkGuess(randomDigits, guessDigits);
     }
 
     // Uses random to generate digits 1-9 in the array
-    public static void generateRandom(Random r, int[] array) {
-        for (int i = 0; i < array.length; i++) {
+    public static char[] generateRandom(Random r) {
+        int[] array = new int[4];
+        char[] randomDigits = new char[4];
+        for (int i = 0; i < 4; i++) {
             array[i] = r.nextInt(10);   
         }
+
+        for (int i = 0; i < 4; i++) {
+            randomDigits[i] = (char) (array[i] + '0');
+        }
+        return randomDigits;
     }
 
     // Reads input and returns as an array
@@ -37,6 +45,13 @@ public class Mastermind {
         }
 
         return digitsArray;
+    }
+
+    public static String checkGuess(char[] randomDigits, char[] guessDigits) {
+        int count = 0;
+        //for (int i = 0; )
+
+        return "h";
     }
 
     // Prints out the intro of the game
