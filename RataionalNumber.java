@@ -23,6 +23,12 @@ public class RataionalNumber {
         return numerator;
     }
 
-    // @TODO: String representation for example: "5/3"
+    // String representation for example: "5/3"
+    public String printRational() {
+        if (denominator == 1) {
+            return Integer.toString(numerator);
+        }
+        return Integer.toString(numerator) + "/" + Integer.toString(denominator);  // Executes when if statement is false
+    }
     // @TODO: Keep values simplified
 }
