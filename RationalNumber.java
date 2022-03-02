@@ -1,15 +1,15 @@
-public class RataionalNumber {
+public class RationalNumber {
     private int numerator;
     private int denominator;
 
     // Constructs an object that is 0/1
-    public RataionalNumber() {
+    public RationalNumber() {
         this.numerator = 0;
         this.denominator = 1;
     }
 
     // Constructs an object with values of your choice
-    public RataionalNumber(int numerator, int denominator) {
+    public RationalNumber(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
