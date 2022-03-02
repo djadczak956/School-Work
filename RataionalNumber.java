@@ -13,8 +13,16 @@ public class RataionalNumber {
         this.numerator = numerator;
         this.denominator = denominator;
     }
-    // @TODO: Accessor for denominator
-    // @TODO: Accessor for numerator
+
+    // Accessor for denominator
+    public int getDenominator() {
+        return denominator;
+    }
+    // Accessor for numerator
+    public int getNumerator() {
+        return numerator;
+    }
+
     // @TODO: String representation for example: "5/3"
     // @TODO: Keep values simplified
 }
