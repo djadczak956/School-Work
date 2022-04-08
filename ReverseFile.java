@@ -6,8 +6,9 @@ import java.io.*;       // For File
 public class ReverseFile {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(new File("sample.txt"));
-        //PrintStream output = new PrintStream(new File("reversed_string.txt"));
-        System.out.println(convertToList(input));
+        PrintStream output = new PrintStream(new File("reversed_text.txt"));
+        ArrayList<String> reversedArray = reverseArray(convertToList(input));
+        writeToFile(output, reversedArray);
     }
 
     // Uses Scanner to take all the words of a file and convert to a list
@@ -27,5 +28,11 @@ public class ReverseFile {
             reversed.add(list.get(i));
         }
         return reversed;
+    }
+
+    public static void writeToFile(PrintStream output, ArrayList<String> reversedList) {
+        for (String element : reversedList) {
+            output.print(element + " ");
+        }
     }
 }
