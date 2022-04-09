@@ -32,7 +32,7 @@ public class ReverseFile {
 
     public static void writeToFile(PrintStream output, ArrayList<String> reversedList) {
         for (String element : reversedList) {
-            output.print(element + " ");
+            output.print(element + "\n");
         }
     }
 }
