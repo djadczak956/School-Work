@@ -30,6 +30,8 @@ public class ReverseFile {
         return reversed;
     }
 
+    // Uses a PrintStream object to write a given ArrayList to a file
+    // It prints a new line for each word because why not
     public static void writeToFile(PrintStream output, ArrayList<String> reversedList) {
         for (String element : reversedList) {
             output.print(element + "\n");
