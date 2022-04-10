@@ -19,4 +19,12 @@ public class ShoppingList {
     public void remove(ItemOrders item) {
         list.remove(item);
     }
+
+    // Returns the total price of the shopping cart
+    public void totalPrice() {
+        double sum = 0.0;
+        for (ItemOrders token : list) {
+            sum += token.getAmount() * token.getItem().getPrice();
+        }
+    }
 }
