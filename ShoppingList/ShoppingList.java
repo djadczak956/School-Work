@@ -14,4 +14,9 @@ public class ShoppingList {
     public void add(ItemOrders item) {
         list.add(item);
     }
+
+    // Removes an ItemOrders object from list
+    public void remove(ItemOrders item) {
+        list.remove(item);
+    }
 }
