@@ -19,5 +19,12 @@ public class RectangleList {
     public void moveElement(Rectangle window) {
         list.add(0, window);
         list.remove(window.getZ() - 1);
-    } 
+    }
+
+    // Moves rectangle if it is clicked
+    public void ifClicked(Rectangle r, int x, int y) {
+        if (r.isClicked(x, y)) {
+            moveElement(r);
+        }
+    }
 }
