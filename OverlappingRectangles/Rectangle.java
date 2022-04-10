@@ -15,6 +15,17 @@ public class Rectangle {
         this.width = width;
     }
 
+    // Checks if randomly clicked point is in a rectangle
+    public boolean isClicked(int x, int y) {
+        Point p = new Point(x, y);
+        if (p.clicked()) {
+            if ((p.getX() >= x && p.getX() <= x + length) && (p.getY() >= y && p.getY() <= y + width)) {
+                return true;    // Return true if the clicked point is in the Rectangle
+            }
+        }
+        return false;
+    }
+
     // Accessor for x
     public int getX() {
         return x;
