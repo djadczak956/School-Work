@@ -26,5 +26,6 @@ public class ShoppingList {
         for (ItemOrders token : list) {
             sum += token.getAmount() * token.getItem().getPrice();
         }
+        System.out.println("The total cost is: " + sum);
     }
 }
