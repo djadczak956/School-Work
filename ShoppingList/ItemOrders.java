@@ -9,4 +9,14 @@ public class ItemOrders {
         this.item = item;
         this.amount = amount;
     }
+
+    // Accessor for amount
+    public int getAmount() {
+        return amount;
+    }
+
+    // Accessor for item
+    public Item getItem() {
+        return item;
+    }
 }
