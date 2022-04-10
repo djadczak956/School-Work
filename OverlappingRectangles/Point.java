@@ -25,4 +25,13 @@ public class Point {
     public int getY() {
         return y;
     }
+
+    // Randomly generates if a point has been clicked
+    public boolean clicked() {
+        int num = (int) (Math.random() * 2);
+        if (num == 0) {
+            return false;
+        }
+        return true;
+    }
 }
