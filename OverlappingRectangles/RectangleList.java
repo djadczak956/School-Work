@@ -10,6 +10,11 @@ public class RectangleList {
         this.list = new ArrayList<Rectangle>();
     }
 
+    // Accessor for list
+    public ArrayList<Rectangle> getList() {
+        return list;
+    }
+
     // Creates a new window from Rectangle
     public void addElement(Rectangle window) {
         list.add(window);
