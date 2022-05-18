@@ -17,7 +17,8 @@ public class BasicHashMap {
             double salary = salaryMap.get(name);
             System.out.printf("%s's salary is $%.2f\n", name, salary);
         }
-
         console.close();
+
+        System.out.println(salaryMap.toString());
     }
 }
