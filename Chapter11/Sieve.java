@@ -2,7 +2,7 @@ package Chapter11;
 
 import java.util.*;
 
-
+// Modified to return odd numbers
 public class Sieve {
     public static void main(String[] args) {
         System.out.println("Primes: " + sieve(100));
@@ -13,7 +13,8 @@ public class Sieve {
         List<Integer> primes = new LinkedList<>();
         
         List<Integer> numbers = new LinkedList<>();
-        for (int i = 2; i <= n; i++) {
+        numbers.add(2);
+        for (int i = 3; i <= n; i += 2) {
             numbers.add(i);
         }
 
