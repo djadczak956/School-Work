@@ -5,7 +5,7 @@ import java.util.*;
 // Modified to return odd numbers
 public class Sieve {
     public static void main(String[] args) {
-        System.out.println("Primes: " + sieve(100));
+        System.out.println("Primes: " + sieve(144));
     }
 
     // Sieve method for primes from 2 to n
@@ -19,6 +19,14 @@ public class Sieve {
         }
 
         while (!numbers.isEmpty()) {
+            // If front == sqrt(n) then add all elements of numbers to primes except n
+            if (numbers.get(0) == Math.sqrt(n)) {
+                primes.addAll(numbers);
+                ((LinkedList) primes).removeLast();
+                System.out.println(primes.toString());
+                return primes;
+            }
+            
             // Remove prime num from numbers 
             // Add prime num into primes
             int front = numbers.remove(0);
