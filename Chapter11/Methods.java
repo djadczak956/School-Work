@@ -9,6 +9,8 @@ public class Methods {
     }
 
     public List alternate(List<E> first, List<E> second) {
-        
+        if (first.size() == second.size()) {
+            
+        }
     }
 }
