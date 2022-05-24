@@ -22,15 +22,10 @@ public class Methods {
         Iterator<Integer> itr1 = first.iterator();
         Iterator<Integer> itr2 = second.iterator();
         
-        if (first.size() == second.size()) {
+        if (first.size() <= second.size()) {
             while (itr1.hasNext()) {
                 newList.add(itr1.next());                
                 newList.add(itr2.next());                
-            }
-        } else if (first.size() < second.size()) {
-            while (itr1.hasNext()) {
-                newList.add(itr1.next());
-                newList.add(itr2.next());
             }
             while (itr2.hasNext()) {
                 newList.add(itr2.next());
