@@ -1,10 +1,14 @@
 package Chapter11;
 
+import java.util.*;
+import java.io.*;
+
 // https://en.wikipedia.org/wiki/Levenshtein_distance
 
 public class Levenshtein {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws FileNotFoundException {
         System.out.println(get_levenshtein("bird".toCharArray(), "word".toCharArray()));
+        File words = new File("words.txt");
     }
 
     // This method computes and returns the edit distance of two char arrays
@@ -37,5 +41,18 @@ public class Levenshtein {
     public static int minimum(int a, int b, int c) {
         int temp = Math.min(a, b);
         return Math.min(temp, c);
+    }
+
+    // Computes a map for each word and a list of its immediate neighbors
+    public static Map neighbors(File f) throws FileNotFoundException {
+        Map<String, List> neighborsMap = new HashMap<>();
+        List<String> words = new ArrayList<>();
+
+        Scanner input = new Scanner(new File("Chapter11/Levenshtein.java"));
+        while (input.hasNextLine()) {
+            words.add(input.nextLine());
+        }
+
+        return neighborsMap;
     }
 }
