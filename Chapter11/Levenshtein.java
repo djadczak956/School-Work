@@ -7,6 +7,7 @@ public class Levenshtein {
         System.out.println(get_levenshtein("bird".toCharArray(), "word".toCharArray()));
     }
 
+    // This method computes and returns the edit distance of two char arrays
     public static int get_levenshtein(char[] word1, char[] word2) {
         int[][] matrix = new int[word1.length + 1][word2.length + 1];
 
@@ -32,6 +33,7 @@ public class Levenshtein {
         return matrix[word1.length][word2.length];  // Returns last element which is edit distance
     }
 
+    // Computes the minimum between 3 numbers
     public static int minimum(int a, int b, int c) {
         int temp = Math.min(a, b);
         return Math.min(temp, c);
