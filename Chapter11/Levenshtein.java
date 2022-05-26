@@ -65,4 +65,10 @@ public class Levenshtein {
         }
         return neighborsMap;
     }
+
+    // Method to find if a path between two words exist
+    public static boolean path(String start, String end) {
+        
+        return false;
+    }
 }
