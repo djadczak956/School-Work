@@ -7,13 +7,13 @@ import java.io.*;
 
 public class Levenshtein {
     public static void main(String args[]) throws FileNotFoundException {
-        //System.out.println(get_levenshtein("bird", "word"));
+        //System.out.println(lev("bird", "word"));
         File words = new File("wordlist.txt");
         //;
     }
 
-    // This method computes and returns the edit distance of two char arrays
-    public static int get_levenshtein(String str1, String str2) {
+    // This method computes and returns the edit distance of two char arrays with Levenshtein
+    public static int lev(String str1, String str2) {
         char[] word1 = str1.toCharArray();
         char[] word2 = str2.toCharArray();
         int[][] matrix = new int[word1.length + 1][word2.length + 1];
@@ -59,7 +59,7 @@ public class Levenshtein {
         for (int i = 0; i < words.size(); i++) {
             List<String> similarWords = new ArrayList<>();
             for (int j = 0; j < words.size(); j++) {
-                if (get_levenshtein(words.get(i), words.get(j)) == 1) similarWords.add(words.get(j)); 
+                if (lev(words.get(i), words.get(j)) == 1) similarWords.add(words.get(j)); 
             }
             neighborsMap.put(words.get(i), similarWords);
         }
