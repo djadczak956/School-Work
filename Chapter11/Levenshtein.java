@@ -9,7 +9,6 @@ public class Levenshtein {
     public static void main(String args[]) throws FileNotFoundException {
         //System.out.println(lev("bird", "word"));
         File words = new File("wordlist.txt");
-        //;
     }
 
     // This method computes and returns the edit distance of two char arrays with Levenshtein
@@ -64,11 +63,5 @@ public class Levenshtein {
             neighborsMap.put(words.get(i), similarWords);
         }
         return neighborsMap;
-    }
-
-    // Method to find if a path between two words exist
-    public static boolean path(String start, String end) {
-        
-        return false;
     }
 }
