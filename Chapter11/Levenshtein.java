@@ -7,12 +7,15 @@ import java.io.*;
 
 public class Levenshtein {
     public static void main(String args[]) throws FileNotFoundException {
-        System.out.println(get_levenshtein("bird".toCharArray(), "word".toCharArray()));
-        File words = new File("words.txt");
+        //System.out.println(get_levenshtein("bird", "word"));
+        File words = new File("wordlist.txt");
+        //;
     }
 
     // This method computes and returns the edit distance of two char arrays
-    public static int get_levenshtein(char[] word1, char[] word2) {
+    public static int get_levenshtein(String str1, String str2) {
+        char[] word1 = str1.toCharArray();
+        char[] word2 = str2.toCharArray();
         int[][] matrix = new int[word1.length + 1][word2.length + 1];
 
         // These two loops create base numbers in the matrix
@@ -46,13 +49,20 @@ public class Levenshtein {
     // Computes a map for each word and a list of its immediate neighbors
     public static Map neighbors(File f) throws FileNotFoundException {
         Map<String, List> neighborsMap = new HashMap<>();
-        List<String> words = new ArrayList<>();
+        List<String> words = new ArrayList<>(); // List to store all words 
 
-        Scanner input = new Scanner(new File("Chapter11/Levenshtein.java"));
-        while (input.hasNextLine()) {
-            words.add(input.nextLine());
+        Scanner input = new Scanner(new File("Chapter11/wordlist.txt"));
+        while (input.hasNext()) {
+            words.add(input.next());
         }
 
+        for (int i = 0; i < words.size(); i++) {
+            List<String> similarWords = new ArrayList<>();
+            for (int j = 0; j < words.size(); j++) {
+                if (get_levenshtein(words.get(i), words.get(j)) == 1) similarWords.add(words.get(j)); 
+            }
+            neighborsMap.put(words.get(i), similarWords);
+        }
         return neighborsMap;
     }
 }
