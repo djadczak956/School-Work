@@ -8,7 +8,7 @@ import java.io.*;
 public class Levenshtein {
     public static void main(String args[]) throws FileNotFoundException {
         //System.out.println(lev("bird", "word"));
-        File words = new File("wordlist.txt");
+        //File words = new File("wordlist.txt");
     }
 
     // This method computes and returns the edit distance of two char arrays with Levenshtein
@@ -46,8 +46,8 @@ public class Levenshtein {
     }
 
     // Computes a map for each word and a list of its immediate neighbors
-    public static Map neighbors(File f) throws FileNotFoundException {
-        Map<String, List> neighborsMap = new HashMap<>();
+    public static Map<String, List<String>> neighbors(File f) throws FileNotFoundException {
+        Map<String, List<String>> neighborsMap = new HashMap<>();
         List<String> words = new ArrayList<>(); // List to store all words 
 
         Scanner input = new Scanner(new File("Chapter11/wordlist.txt"));
