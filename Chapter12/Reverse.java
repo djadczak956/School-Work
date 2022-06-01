@@ -12,7 +12,7 @@ public class Reverse {
 
     // Simple method to reverse input
     public static void reverse(Scanner input) {
-        while(input.hasNextLine()) {
+        if (input.hasNextLine()) {
             String line = input.nextLine();
             reverse(input);
             System.out.println(line);
