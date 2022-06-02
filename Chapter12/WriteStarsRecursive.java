@@ -1,5 +1,3 @@
-package Chapter12;
-
 public class WriteStarsRecursive {
     public static void main(String[] args) {
         writeStars(10);

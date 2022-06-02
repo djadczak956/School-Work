@@ -1,5 +1,3 @@
-package Chapter12;
-
 import java.util.*;
 import java.io.*;
 

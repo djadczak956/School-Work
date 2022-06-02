@@ -1,5 +1,3 @@
-package Chapter12;
-
 public class WriteStarsIterative {
     public static void main(String[] args) {
         writeStars(10);
