@@ -10,15 +10,20 @@ public class RecursiveDirectory {
         if (!f.exists()) {
             System.out.println("No such file/directory");
         } else {
-            print(f);
+            print(f, 0);
         }
     }
 
-    public static void print(File f) {
+    public static void print(File f, int level) {
+        for (int i = 0; i < level; i++) {
+            // Indentation
+            System.out.print("\t");
+        }
+
         System.out.println(f.getName());
         if (f.isDirectory()) {
             for (File subF : f.listFiles()) {
-                print(subF);
+                print(subF, level + 1);
             }
         }
     }
