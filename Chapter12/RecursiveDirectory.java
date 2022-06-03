@@ -15,6 +15,11 @@ public class RecursiveDirectory {
     }
 
     public static void print(File f) {
-        
+        System.out.println(f.getName());
+        if (f.isDirectory()) {
+            for (File subF : f.listFiles()) {
+                print(subF);
+            }
+        }
     }
 }
