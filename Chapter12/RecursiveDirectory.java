@@ -12,6 +12,8 @@ public class RecursiveDirectory {
         } else {
             print(f, 0);
         }
+
+        console.close();
     }
 
     public static void print(File f, int level) {
